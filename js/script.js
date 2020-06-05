@@ -13,6 +13,8 @@ function populateUfs(){
 
 populateUfs()
 
+document.querySelector("select[name=uf]").addEventListener("change", getCities)
+
 function getCities(event){
   const ufSelect = document.querySelector("[name=uf]").value
   const citySelect = document.querySelector("[name=city]")
@@ -43,13 +45,40 @@ const itemsToCollect = document.querySelectorAll(".items-grid li")
 for(const item of itemsToCollect){
   item.addEventListener("click",handleSelectedItem)
 }
+let selectedItems=[]
+const CollectedItems = document.querySelector("[name=items]")
+
 
 function handleSelectedItem(event){
-  // const itemLi = 
-  console.log(event.target)
+   const itemLi = (event.target)
 
-  // itemLi.classList.toggle("selected")
+   itemLi.classList.toggle("selected")
 
-  // const itemId = itemLi.dataset.id
+   const itemId = itemLi.dataset.id
+
+   const alreadySelected = selectedItems.findIndex( item =>{
+     const itemFound = item === itemId
+     return itemFound
+   })
+
+   if(alreadySelected >= 0){
+     const filteredItems = selectedItems.filter( item =>{
+       const itemIsDifferent = item != itemId
+       return itemIsDifferent
+     })
+
+     selectedItems = filteredItems
+   }else{
+    selectedItems.push(itemId)
+   }
+   console.log(selectedItems)
+   CollectedItems.value = selectedItems
 }
-// document.querySelector("select[name=uf]").addEventListener("change", getCities)
+
+const filledForm = document.querySelector("button[name=enviar]")
+const modalHiden = document.querySelector("#modalSucess")
+
+
+filledForm.addEventListener("click",() => {
+  modalHiden.classList.remove("hide")
+})

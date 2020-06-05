@@ -6,23 +6,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/create-point.css">
+    <link rel="stylesheet" href="styles/modal.css">
     <link rel="stylesheet" href="styles/responsive.css">
-    <script type="text/javascript"  src="./js/script.js"></script>
+    
     <title>Criar um ponto de coleta</title>
   </head>
-  <body onload="populateUfs()">
+  <body>
 
     <div id="page-create-point">
       
         <header>
           <img src="./icones/logo.svg" alt="Ecoleta">
-          <a href="../nwl/index.html">
+          <a href="/index.html">
             <span></span>
             Voltar para a home
           </a>
         </header>
 
-        <form action="">
+        <form action="#">
           <h1>Cadastro do ponto de coleta</h1>
           <fieldset>
             <legend>
@@ -71,7 +72,7 @@
             </legend>
 
               <div class="items-grid">
-                <li data-id="1" class="selected">
+                <li data-id="1" class="r">
                   <img src="./icones/lampadas.svg" alt="Lâmpadas">
                   <span>Lâmpadas</span>
                 </li>
@@ -101,12 +102,21 @@
                   <span>Oléo de Cozinha</span>
                 </li>
             </div>
+
+            <input type="hidden" name="items">
           </fieldset>
 
-          <button type="submit">Cadastrar ponto de coleta</button>
+          <button name="enviar" type="button">Cadastrar ponto de coleta</button>
         </form>
     </div>  
     
-    
+    <div id="modalSucess" class="hide">
+      <div class="contentSucess">
+          <a href="/index.html">Sucesso</a>
+          <h1>Cadastro Concluído!</h1>
+      </div>
+    </div>
+
+    <script type="text/javascript"  src="/js/script.js"></script>
   </body>
 </html>
