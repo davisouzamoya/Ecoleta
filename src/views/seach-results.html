@@ -1,26 +1,17 @@
-<!DOCTYPE html>
-<html lang="pt_BR">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewpont" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@300;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/seach-results.css">
-    <link rel="stylesheet" href="styles/responsive.css">
-    
-    <title>Criar um ponto de coleta</title>
-  </head>
-  <body>
+{% extends "layout.html" %}
+    {% set bodyId = "page-seach-results" %}
 
-    <div id="page-seach-results">
-      
-        <header>
-          <img src="./icones/logo.svg" alt="Ecoleta">
-          <a href="/">
-            <span></span>
-            Voltar para a home
-          </a>
-        </header>
+    {% block title %}
+      <title>Criar um ponto de coleta</title>
+    {% endblock title %}
+
+    {% block styles %}
+      <link rel="stylesheet" href="styles/seach-results.css">
+    {% endblock styles %}
+    
+{% block content %}
+     
+        {% include "partials/page-header.html" %}
 
         <main>
           <h4>
@@ -51,8 +42,8 @@
           </div>
         </div>
       </main>
-    </div>  
+      
+{% endblock content %}
     
-    <script type="text/javascript"  src="/js/script.js"></script>
-  </body>
-</html>
+  
+    
