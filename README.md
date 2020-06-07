@@ -2,14 +2,14 @@
 
 ## Table of Contents
 
-- [About](#about)
+- [About](#projeto)
 - [Getting Started](#getting_started)
 - [Usage](#usage)
 - [Contributing](../CONTRIBUTING.md)
 
-## About <a name = "about"></a>
+## 💻 Projeto <a name = "projeto"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+Ecoleta foi um projeto desenvolvido na NWL(next week level) promovida pela Rocketseat e paletrada pelo professor Mayk Brito. O Ecoleta tem como objetivo conectar empresas, entidades de coleta de resíduos orgânicos, inorgânicos e pessoas que precisam descartar seus resíduos de maneira ecológica.
 
 ## Getting Started <a name = "getting_started"></a>
 
@@ -41,6 +41,8 @@ until finished
 
 End with an example of getting some data out of the system or using it for a little demo.
 
-## Usage <a name = "usage"></a>
+## 🚀 Tecnologias usadas <a name = "usage"></a>
 
-Add notes about how to use the system.
+HTML
+CSS
+JS
