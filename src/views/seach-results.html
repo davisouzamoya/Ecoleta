@@ -1,49 +1,46 @@
 {% extends "layout.html" %}
-    {% set bodyId = "page-seach-results" %}
+{% set bodyId = "page-seach-results" %}
 
-    {% block title %}
-      <title>Criar um ponto de coleta</title>
-    {% endblock title %}
+{% block title %}
+  <title>Criar um ponto de coleta</title>
+{% endblock title %}
 
-    {% block styles %}
-      <link rel="stylesheet" href="styles/seach-results.css">
-    {% endblock styles %}
-    
+{% block styles %}
+  <link rel="stylesheet" href="styles/seach-results.css">
+{% endblock styles %}
+
 {% block content %}
-     
-        {% include "partials/page-header.html" %}
 
-        <main>
-          <h4>
-            <strong>2 pontos</strong> encontrados:
-          </h4>
-        
+  {% include "partials/page-header.html" %}
 
-        <div class="cards">
-          <div class="card">
-            <img src="https://cdn4.ecycle.com.br/cache/images/guia_da_reciclagem/50-750-logoreciclagem-750.jpg" alt="colectoria">
-            <h1>Colectoria</h1>
-            <h3>Resíduos Eletrônicos, lâmpadas</h3>
-            <p>
-              Rio do Sul, Santa Catarina </br>
-              Guilherme Gemballa,Jardim América</br>
-              N° 260
-            </p>
-          </div>
-          <div class="card">
-            <img src="https://www.larplasticos.com.br/wp-content/uploads/2020/02/S%C3%ADmbolo-da-reciclagem-1024x576.jpg" alt="Paperside">
-            <h1>Paperside</h1>
-            <h3>Papéis e Papelão</h3>
-            <p>
-              Rio do Sul, Santa Catarina </br>
-              Guilherme Gemballa,Jardim América</br>
-              N° 260
-            </p>
-          </div>
-        </div>
-      </main>
-      
+  <main>
+
+    {% if total > 0 %}
+      <h4>
+        <strong>
+          {{total}}
+          pontos</strong>
+        encontrados:
+      </h4>
+
+    <div class="cards">
+      {% for places in places %}
+        <div class="card">
+          <img src="{{ places.image }}" alt="{{ places.name }}">
+          <h1>{{ places.name }}</h1>
+          <h3>{{ places.items }}</h3>
+          <p>
+            {{ places.state }},{{ places.city }}</br>
+            {{ places.andress }}</br>
+            {{ places.andress2 }}
+      </p>
+    </div>
+  {% endfor %}
+</div>
+</main>
+{% else %}
+    <h4><strong> Nenhum local encontrado:</strong></h4>
+
+{% endif %}
+
 {% endblock content %}
-    
-  
-    

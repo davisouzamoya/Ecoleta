@@ -1,25 +1,19 @@
 
-/* Modal Sucesso */
-
 #modalSucess {
   background-color: #0E0A14;
   opacity: 0.95;
   height: 100vh;
   width: 100vw;
-
   position: fixed;
   top: 0;
-
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
-  
   justify-content: center;
-
   align-items: center;
 }
 
-#modalSucess.hide{
-  display: none;
-}
 
 #modalSucess .contentSucess h1{
   color:white;
@@ -33,7 +27,7 @@
 
 
 #modalSucess .contentSucess a{
-  background-image: url(/icones/ok.svg);
+  background-image: url("../icones/check.svg");
   width: 47px;
   height: 47px;
   margin-left: 35%;
